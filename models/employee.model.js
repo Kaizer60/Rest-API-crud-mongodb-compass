@@ -4,7 +4,7 @@ let changTimezone = Date.now()+25200000 //ใช้คำสั่ง Date.now �
 let thaiTimezone = new Date(changTimezone) //สร้างตัวแปลรับ Date ของโซนประเทศไทย
 
 module.exports = mongoose.model('Employee', {
-    fullName: { type: String },
+    name: { type: String },
     age: { type: Number },
     updated_at: { type: Date, default: thaiTimezone },
 })

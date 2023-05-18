@@ -44,7 +44,7 @@ router.post('/', async (req, res, next) => {
     // employeeCrud.create(req.body)
         .then(data => {
             if(data){
-                res.res.status(201).json(data)
+                res.status(201).json(data)
             }else{
                 raiseRecord404Error(req, res)
             }
