@@ -14,8 +14,8 @@ const employeeCrud = generateCrudMethods(Employee)
 
 //Read all
 router.get('/', async (req, res, next) => {
-    Employee.find()
-    // employeeCrud.getAll()
+    // Employee.find()
+    employeeCrud.getAll()
         .then(data => res.send(data))
         .catch(err => next(err))
 })
@@ -24,8 +24,8 @@ router.get('/', async (req, res, next) => {
 
 //Raed by id
 router.get('/:id', validateDbId, async (req, res, next) => {
-    Employee.findById(req.params.id)
-    // employeeCrud.getByid(req.params.id)
+    // Employee.findById(req.params.id)
+    employeeCrud.getByid(req.params.id)
         .then(data => {
             if(data){
                 res.send(data)
@@ -40,8 +40,8 @@ router.get('/:id', validateDbId, async (req, res, next) => {
 
 //Create
 router.post('/', async (req, res, next) => {
-    Employee.create(req.body)
-    // employeeCrud.create(req.body)
+    // Employee.create(req.body)
+    employeeCrud.create(req.body)
         .then(data => {
             if(data){
                 res.status(201).json(data)
@@ -56,8 +56,8 @@ router.post('/', async (req, res, next) => {
 
 //Update
 router.put('/:id', validateDbId, async (req, res, next) => {
-    Employee.findByIdAndUpdate(req.params.id, req.body)
-    // employeeCrud.update(req.params.id, req.body)
+    // Employee.findByIdAndUpdate(req.params.id, req.body)
+    employeeCrud.update(req.params.id, req.body)
         .then(data => {
             if(data){
                 res.send(data)
@@ -72,8 +72,8 @@ router.put('/:id', validateDbId, async (req, res, next) => {
 
 //Delete
 router.delete('/:id', validateDbId, async (req, res, next) => {
-    Employee.findByIdAndDelete(req.params.id)
-    // employeeCrud.delete(req.params.id)
+    // Employee.findByIdAndDelete(req.params.id)
+    employeeCrud.delete(req.params.id)
         .then(data => {
             if(data){
                 res.send(data)

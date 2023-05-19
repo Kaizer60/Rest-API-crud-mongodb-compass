@@ -1,6 +1,6 @@
-exports.generateCrudMethods = Model => {
+module.exports.generateCrudMethods = Model => {
     return {
-        getall: () => Model.find(),
+        getAll: () => Model.find(),
         getByid: id => Model.findById(id),
         create: recode => Model.create(recode),
         update: (id, recode) => Model.findByIdAndUpdate(id, recode, { new: true}),

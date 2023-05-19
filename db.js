@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const dbUri = 'mongodb://myDB:1234@localhost:27017/?authMechanism=DEFAULT'
+const dbUri = 'mongodb://localhost:27017/employee_db'
 
 mongoose.set('strictQuery', false)
 
